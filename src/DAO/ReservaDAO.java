@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 import modelo.Reservas;
 
 public class ReservaDAO {
@@ -14,8 +17,12 @@ public class ReservaDAO {
 		this.connection = connection;
 	}
 	
-	public void salvarHospede(Reservas reserva) throws SQLException {
-		String sql = "INSERT INTO HOSPEDE (DATAENTRADA, DATASAIDA, VALOR, FORMAPAGAMENTO) VALUES(?,?,?,?)";
+	public void salvarReserva(Reservas reserva) throws SQLException {
+		
+	//	public List<Reservas>buscar() {
+			List<Reservas> reservas = new ArrayList<Reservas>();
+			
+		String sql = "SELECT id, dataEntrada, dataSaida, valor, formaPagamento FROM reservas";
 		
 		try(PreparedStatement pstm = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
 				
@@ -26,7 +33,8 @@ public class ReservaDAO {
 				
 				pstm.execute();
 	
+		   }
 		}
 	}
 	
-}
+//}
