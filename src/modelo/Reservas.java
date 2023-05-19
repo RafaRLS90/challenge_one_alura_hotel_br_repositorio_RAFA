@@ -1,15 +1,17 @@
 package modelo;
 
+import java.sql.Date;
+
 public class Reservas {
 
 	private int id;
-	private int dataEntrada;
-	private int dataSaida;
+	private Date dataEntrada;
+	private Date dataSaida;
 	private int valor;
 	private String formaPagamento;
 	
 	
-	public Reservas(int dataEntrada, int dataSaida, int valor, String formaPagamento) {
+	public Reservas(Date dataEntrada, Date dataSaida, int valor, String formaPagamento) {
 		super();
 		this.dataEntrada = dataEntrada;
 		this.dataSaida = dataSaida;
@@ -34,22 +36,22 @@ public class Reservas {
 
 
 
-	public int getDataEntrada() {
+	public Date getDataEntrada() {
 		return dataEntrada;
 	}
 
 
-	public void setDataEntrada(int dataEntrada) {
+	public void setDataEntrada(Date dataEntrada) {
 		this.dataEntrada = dataEntrada;
 	}
 
 
-	public int getDataSaida() {
+	public Date getDataSaida() {
 		return dataSaida;
 	}
 
 
-	public void setDataSaida(int dataSaida) {
+	public void setDataSaida(Date dataSaida) {
 		this.dataSaida = dataSaida;
 	}
 
